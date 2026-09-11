@@ -358,6 +358,7 @@ def exportar_historico():
     output.seek(0)
     return Response("\ufeff" + output.getvalue(), mimetype="text/csv", headers={"Content-Disposition": f"attachment;filename=ict_firebase_{di}_{df}.csv"})
 
+init_firebase_defaults()
+
 if __name__ == "__main__":
-    init_firebase_defaults()
     app.run(host="0.0.0.0", port=5000, debug=False)
